@@ -1,0 +1,27 @@
+{
+  "name": "ssys_employee_manager",
+  "version": "1.0.0",
+  "description": "Desafio recebido da SSYS",
+  "main": "./src/api/server.js",
+  "scripts": {
+    "test": "mocha ./tests/**/$NAME*.test.js --exit",
+    "start": "node .",
+    "dev": "nodemon .src/api/server.js"
+  },
+  "author": "Edimar dos Santos Resende",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.4.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "eslint-config-trybe-backend": "^1.0.4",
+    "mocha": "^9.2.2",
+    "mongodb-memory-server": "^8.4.2",
+    "nodemon": "^2.0.15",
+    "sinon": "^13.0.1"
+  }
+}

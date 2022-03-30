@@ -1,0 +1,8 @@
+### Dependencies ###
+node_modules
+
+### VS Code ###
+.vscode
+
+# dotenv environment variables file
+.env
