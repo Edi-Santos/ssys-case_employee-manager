@@ -13,7 +13,10 @@ const getEmployeeById = async (id) => {
   return employee;
 };
 
+const createEmployee = async (employeeDatas) => Employees.createEmployee(employeeDatas);
+
 module.exports = {
   getAllEmployees,
   getEmployeeById,
+  createEmployee,
 };

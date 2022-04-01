@@ -17,7 +17,18 @@ const getEmployeeById = async (id) => {
   return user;
 };
 
+const createEmployee = async (employeeDatas) => {
+  const db = await connection();
+  const newEmployee = await db.collection(COLLECTION).insertOne(employeeDatas);
+
+  return {
+    _id: newEmployee.insertedId,
+    ...employeeDatas,
+  };
+};
+
 module.exports = {
   getAllEmployees,
   getEmployeeById,
+  createEmployee,
 };

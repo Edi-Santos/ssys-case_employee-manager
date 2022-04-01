@@ -20,7 +20,16 @@ const getEmployeeById = async (req, res) => {
   return res.status(200).json({ employee });
 };
 
+const createEmployee = async (req, res) => {
+  const employeeDatas = req.body;
+
+  const newEmployee = await Employees.createEmployee(employeeDatas);
+
+  return res.status(201).json({ newEmployee });
+};
+
 module.exports = {
   getAllEmployees,
   getEmployeeById,
+  createEmployee,
 };
