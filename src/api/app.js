@@ -10,5 +10,6 @@ app.use(express.json());
 // Rotas
 app.post('/login', Login.login);
 app.get('/employees', auth.authorization, Employees.getAllEmployees);
+app.get('/employees/:id', auth.authorization, Employees.getEmployeeById);
 
 module.exports = app;
