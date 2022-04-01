@@ -11,7 +11,22 @@ const errorEmployeeNotExists = {
 };
 // ===
 
+// Mensagens para endpoint POST /employees
+// ===
+const errorEmptyFields = {
+  message: 'Todos os campos devem ser preenchidos.',
+  status: 401,
+};
+
+const errorPropertyType = {
+  message: 'Todos os campos devem ser do tipo string',
+  status: 400,
+};
+// ===
+
 module.exports = {
   errorInvalidId,
   errorEmployeeNotExists,
+  errorEmptyFields,
+  errorPropertyType,
 };

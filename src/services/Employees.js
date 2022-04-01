@@ -13,7 +13,15 @@ const getEmployeeById = async (id) => {
   return employee;
 };
 
-const createEmployee = async (employeeDatas) => Employees.createEmployee(employeeDatas);
+const createEmployee = async (employeeDatas) => {
+  const validation = employeeValidation.createEmployeeValidatin(employeeDatas);
+
+  if (validation !== true) return validation;
+
+  const newEmployee = await Employees.createEmployee(employeeDatas);
+
+  return newEmployee;
+};
 
 module.exports = {
   getAllEmployees,

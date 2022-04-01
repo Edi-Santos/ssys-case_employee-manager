@@ -25,6 +25,12 @@ const createEmployee = async (req, res) => {
 
   const newEmployee = await Employees.createEmployee(employeeDatas);
 
+  if (newEmployee.message) {
+    const { status, message } = newEmployee;
+
+    return res.status(status).json({ message });
+  }
+
   return res.status(201).json({ newEmployee });
 };
 

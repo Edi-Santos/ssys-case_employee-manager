@@ -13,6 +13,15 @@ const employeeExists = async (id) => {
 };
 // ===
 
+// Funções auxiliares para validação
+// ===
+const emptyProperty = (employeeDatas) => Object.keys(employeeDatas)
+  .some((property) => employeeDatas[property] === '');
+
+const propertyType = (employeeDatas) => Object.keys(employeeDatas)
+  .some((property) => typeof (employeeDatas[property]) !== 'string');
+// ===
+
 const employeeIdValidation = async (id) => {
   if (!ObjectId.isValid(id)) return errorMessages.errorInvalidId;
   
@@ -22,6 +31,19 @@ const employeeIdValidation = async (id) => {
   return true;
 };
 
+const createEmployeeValidatin = (employeeDatas) => {
+  // const { name, email, department, salary, birth_date } = employeeDatas;
+
+  const emptyPropertyValidation = emptyProperty(employeeDatas);
+  const propertiesTypeValidation = propertyType(employeeDatas);
+
+  if (emptyPropertyValidation) return errorMessages.errorEmptyFields;
+  if (propertiesTypeValidation) return errorMessages.errorPropertyType;
+
+  return true;
+};
+
 module.exports = {
   employeeIdValidation,
+  createEmployeeValidatin,
 };
