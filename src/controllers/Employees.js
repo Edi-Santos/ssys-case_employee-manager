@@ -11,6 +11,12 @@ const getEmployeeById = async (req, res) => {
 
   const employee = await Employees.getEmployeeById(id);
 
+  if (employee.message) {
+    const { status, message } = employee;
+
+    return res.status(status).json({ message });
+  }
+
   return res.status(200).json({ employee });
 };
 
