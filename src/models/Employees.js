@@ -5,9 +5,9 @@ const COLLECTION = 'employees';
 
 const getAllEmployees = async () => {
   const db = await connection();
-  const users = await db.collection(COLLECTION).find().toArray();
+  const employees = await db.collection(COLLECTION).find().toArray();
 
-  return users;
+  return employees;
 };
 
 const getEmployeeById = async (id) => {
