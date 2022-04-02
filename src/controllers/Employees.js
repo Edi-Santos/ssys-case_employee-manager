@@ -52,9 +52,15 @@ const updateEmployee = async (req, res) => {
 const deleteEmployee = async (req, res) => {
   const { id } = req.params;
 
-  await Employees.deleteEmployee(id);
+  const deletedEmployee = await Employees.deleteEmployee(id);
 
-  return res.status(201).end();
+  if (deletedEmployee === undefined) return res.status(201).end();
+  
+  if (deletedEmployee.message) {
+    const { status, message } = deletedEmployee;
+
+    return res.status(status).json({ message });
+  }
 };
 
 module.exports = {

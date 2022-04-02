@@ -35,7 +35,15 @@ const updateEmployee = async (id, employeeDatas) => {
   return updatingEmployee;
 };
 
-const deleteEmployee = async (id) => Employees.deleteEmployee(id);
+const deleteEmployee = async (id) => {
+  const validationId = await employeeValidation.employeeIdValidation(id);
+
+  if (validationId !== true) return validationId;
+
+  const deletedEmployee = await Employees.deleteEmployee(id);
+
+  return deletedEmployee;
+};
 
 module.exports = {
   getAllEmployees,
