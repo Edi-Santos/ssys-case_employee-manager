@@ -54,7 +54,7 @@ const deleteEmployee = async (req, res) => {
 
   const deletedEmployee = await Employees.deleteEmployee(id);
 
-  if (deletedEmployee === undefined) return res.status(201).end();
+  if (deletedEmployee === undefined) return res.status(204).end();
   
   if (deletedEmployee.message) {
     const { status, message } = deletedEmployee;
