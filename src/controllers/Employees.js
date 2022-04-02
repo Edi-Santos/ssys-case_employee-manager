@@ -34,8 +34,18 @@ const createEmployee = async (req, res) => {
   return res.status(201).json({ newEmployee });
 };
 
+const updateEmployee = async (req, res) => {
+  const { id } = req.params;
+  const employeeDatas = req.body;
+
+  const updatedEmployee = await Employees.updateEmployee(id, employeeDatas);
+
+  return res.status(200).json({ updatedEmployee });
+};
+
 module.exports = {
   getAllEmployees,
   getEmployeeById,
   createEmployee,
+  updateEmployee,
 };

@@ -27,8 +27,33 @@ const createEmployee = async (employeeDatas) => {
   };
 };
 
+const updateEmployee = async (id, employeeDatas) => {
+  const { name, email, department, salary, birth_date } = employeeDatas;
+
+  const db = await connection();
+  await db.collection(COLLECTION).updateOne(
+    { _id: new ObjectId(id) },
+    {
+      $set: {
+        name,
+        email,
+        department,
+        salary,
+        // eslint-disable-next-line camelcase
+        birth_date,
+      },
+    },
+  );
+
+  return {
+    _id: id,
+    ...employeeDatas,
+  };
+};
+
 module.exports = {
   getAllEmployees,
   getEmployeeById,
   createEmployee,
+  updateEmployee,
 };

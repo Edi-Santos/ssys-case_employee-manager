@@ -23,8 +23,11 @@ const createEmployee = async (employeeDatas) => {
   return newEmployee;
 };
 
+const updateEmployee = async (id, employeeDatas) => Employees.updateEmployee(id, employeeDatas);
+
 module.exports = {
   getAllEmployees,
   getEmployeeById,
   createEmployee,
+  updateEmployee,
 };
