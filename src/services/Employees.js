@@ -14,7 +14,7 @@ const getEmployeeById = async (id) => {
 };
 
 const createEmployee = async (employeeDatas) => {
-  const validation = employeeValidation.createEmployeeValidatin(employeeDatas);
+  const validation = employeeValidation.fieldsValidation(employeeDatas);
 
   if (validation !== true) return validation;
 

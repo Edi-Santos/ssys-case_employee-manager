@@ -31,7 +31,7 @@ const employeeIdValidation = async (id) => {
   return true;
 };
 
-const createEmployeeValidatin = (employeeDatas) => {
+const fieldsValidation = (employeeDatas) => {
   // const { name, email, department, salary, birth_date } = employeeDatas;
 
   const emptyPropertyValidation = emptyProperty(employeeDatas);
@@ -45,5 +45,5 @@ const createEmployeeValidatin = (employeeDatas) => {
 
 module.exports = {
   employeeIdValidation,
-  createEmployeeValidatin,
+  fieldsValidation,
 };
