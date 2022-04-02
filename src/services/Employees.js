@@ -23,7 +23,17 @@ const createEmployee = async (employeeDatas) => {
   return newEmployee;
 };
 
-const updateEmployee = async (id, employeeDatas) => Employees.updateEmployee(id, employeeDatas);
+const updateEmployee = async (id, employeeDatas) => {
+  const validationId = await employeeValidation.employeeIdValidation(id);
+  const validationFields = employeeValidation.fieldsValidation(employeeDatas);
+
+  if (validationId !== true) return validationId;
+  if (validationFields !== true) return validationFields;
+  
+  const updatingEmployee = await Employees.updateEmployee(id, employeeDatas);
+
+  return updatingEmployee;
+};
 
 module.exports = {
   getAllEmployees,

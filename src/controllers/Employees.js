@@ -40,6 +40,12 @@ const updateEmployee = async (req, res) => {
 
   const updatedEmployee = await Employees.updateEmployee(id, employeeDatas);
 
+  if (updatedEmployee.message) {
+    const { status, message } = updatedEmployee;
+
+    return res.status(status).json({ message });
+  }
+
   return res.status(200).json({ updatedEmployee });
 };
 
