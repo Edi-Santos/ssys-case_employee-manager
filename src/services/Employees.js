@@ -35,9 +35,12 @@ const updateEmployee = async (id, employeeDatas) => {
   return updatingEmployee;
 };
 
+const deleteEmployee = async (id) => Employees.deleteEmployee(id);
+
 module.exports = {
   getAllEmployees,
   getEmployeeById,
   createEmployee,
   updateEmployee,
+  deleteEmployee,
 };

@@ -51,9 +51,15 @@ const updateEmployee = async (id, employeeDatas) => {
   };
 };
 
+const deleteEmployee = async (id) => {
+  const db = await connection();
+  await db.collection(COLLECTION).deleteOne({ _id: new ObjectId(id) });
+};
+
 module.exports = {
   getAllEmployees,
   getEmployeeById,
   createEmployee,
   updateEmployee,
+  deleteEmployee,
 };

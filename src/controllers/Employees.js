@@ -49,9 +49,18 @@ const updateEmployee = async (req, res) => {
   return res.status(200).json({ updatedEmployee });
 };
 
+const deleteEmployee = async (req, res) => {
+  const { id } = req.params;
+
+  await Employees.deleteEmployee(id);
+
+  return res.status(201).end();
+};
+
 module.exports = {
   getAllEmployees,
   getEmployeeById,
   createEmployee,
   updateEmployee,
+  deleteEmployee,
 };
