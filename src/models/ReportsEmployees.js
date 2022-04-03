@@ -18,7 +18,8 @@ const salaryReport = async () => {
   const report = {
     lowest: lowest[0],
     highest: highest[0],
-    average: average.toFixed(2) };
+    average: average.toFixed(2),
+  };
   
   return report;
 };
