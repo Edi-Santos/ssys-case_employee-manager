@@ -6,6 +6,13 @@ const salaryReport = async (_req, res) => {
   return res.status(200).json(report);
 };
 
+const ageReport = async (_req, res) => {
+  const report = await ReportsEmployees.ageReport();
+
+  return res.status(200).json(report);
+};
+
 module.exports = {
   salaryReport,
+  ageReport,
 };

@@ -23,6 +23,29 @@ const salaryReport = async () => {
   return report;
 };
 
+const ageReport = async () => {
+  const db = await connection();
+
+  const younger = await db.collection(COLLECTION).find()
+    // eslint-disable-next-line camelcase
+    .sort({ birth_date: -1 }).limit(1)
+    .toArray();
+
+  const older = await db.collection(COLLECTION).find()
+    // eslint-disable-next-line camelcase
+    .sort({ birth_date: 1 }).limit(1)
+    .toArray();
+
+  const report = {
+    younger: younger[0],
+    older: older[0],
+    // average: average.toFixed(2)
+  };
+
+  return report;
+};
+
 module.exports = {
   salaryReport,
+  ageReport,
 };
