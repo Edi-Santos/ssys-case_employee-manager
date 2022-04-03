@@ -23,8 +23,6 @@ const salaryReport = async () => {
   return report;
 };
 
-salaryReport();
-
 module.exports = {
   salaryReport,
 };
