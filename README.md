@@ -8,6 +8,8 @@
 2. [Como Rodar o Projeto Em Sua Máquina](#como-rodar-o-projeto-em-sua-máquina)
    - [Pré Requisitos](#pré-requisitos)
    - [Clonando o Projeto](#clonando-o-projeto)
+   - [Instalando Dependências](#instalando-dependências)
+   - [Rodando o Projeto](#rodando-o-projeto)
 
 ## Sobre o Projeto
 O projeto SSYS Employee Manager é, basicamente, uma API onde é possível registrar novos funcionários, consultar os funcionários já registrados, atualizar um registro e deletar um registro. Em outras palavras, é CRUD básico. Também é possível fazer duas consultas para encontrar o maior e menor salário, e também, o mais jovem e mais velho funcionário. Mas, para tudo isto, é necessário estar autenticado. Deste modo, tomei a liberdade de criar um endpoint para login do administrador da aplicação, garantindo então, que, apenas ele, tenha permissão de manusear a aplicação. <br/>
@@ -55,4 +57,24 @@ Com o ambiente preparado, agora é preciso que você clone o projeto para sua m�
 
 1. Dentro do repositório no GitHub, clique no botão ***`Code`*** (O único botão verde na tela).
 2. Em seguida, copie o link do repositório.
-3. Depois, abra o seu terminal, navegue até a pasta que deseja colocar o projeto e use o comando: `git clone git@github.com:Edi-Santos/ssys-case_employee-manager.git`
+3. Depois, abra o seu terminal, navegue até a pasta que deseja colocar o projeto e use o comando: 
+```
+git clone git@github.com:Edi-Santos/ssys-case_employee-manager.git
+```
+
+#### Instalando Dependências
+Com o projeto já clonado, através do seu terminal ainda aberto, entre na pasta raiz do projeto e rode o comando: <br/>
+```
+npm install
+```
+Assim serão instaladas todas as dependências do projeto necessárias para que se possa rodar o projeto.
+
+#### Rodando o Projeto
+Para rodar o projeto use o comando:
+```
+npm start
+```
+ou então:
+```
+npm run dev
+```
