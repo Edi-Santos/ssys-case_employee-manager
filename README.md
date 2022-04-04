@@ -3,6 +3,7 @@
 ### Sumário
 
 1. [Sobre o Projeto](#sobre-o-projeto)
+   - [Padrões de Projeto](#padrões-de-projeto)
    - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 2. [Como Rodar o Projeto Em Sua Máquina](#como-rodar-o-projeto-em-sua-máquina)
    - [Pré Requisitos](#pré-requisitos)
@@ -11,6 +12,10 @@
 ## Sobre o Projeto
 O projeto SSYS Employee Manager é, basicamente, uma API onde é possível registrar novos funcionários, consultar os funcionários já registrados, atualizar um registro e deletar um registro. Em outras palavras, é CRUD básico. Também é possível fazer duas consultas para encontrar o maior e menor salário, e também, o mais jovem e mais velho funcionário. Mas, para tudo isto, é necessário estar autenticado. Deste modo, tomei a liberdade de criar um endpoint para login do administrador da aplicação, garantindo então, que, apenas ele, tenha permissão de manusear a aplicação. <br/>
 Por fim, utilizei banco de dados NoSQL para persistir os dados.
+
+#### Padrões de Projeto
+Busquei organizar as pastas e dividir as responsabilidades do código utilizando o modelo *MSC* (Model, Service e Controller) onde o `Model` é responsável pela interação direta com o banco de dados, `Service` com as regras de negócio e `Controller` sendo a camada de contato direto com o usuário. <br/>
+Busquei também usar alguns dos princípios de *SOLID* tentando colocar em prática a as ideias de `Single Responsibility Principle`, `Open/Closed Principle` e `Dependency Inversion Principle`.
 
 #### Tecnologias Utilizadas
 Para este projeto eu utilizei as seguintes tecnologias:
