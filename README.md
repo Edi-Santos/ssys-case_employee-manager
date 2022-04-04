@@ -52,6 +52,9 @@ Primeiro, será necessário que você tenha instalado o Git, Node (npm) e o Mong
 <a href="https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-20-04-pt">Tutorial do MongoDB (Linux)</a> <br/>
 <a href="https://www.oficinadanet.com.br/post/13367-instalando-mongodb-no-mac-os-x">Tutorial do MongoDB (MacOS)</a> <br/>
 
+Você também precisará de um client como o <a href="https://insomnia.rest/download">Insomnia</a> ou então o <a href="https://www.postman.com/">Postman</a> para fazer as requisições aos endpoints para poder testar a aplicação.<br/>
+Se estiver com o código aberto pelo *VS Code* eu lhe sugiro que use a extensão <a href="https://www.thunderclient.com/">Thunder Client</a>.
+
 #### Clonando o Projeto
 Com o ambiente preparado, agora é preciso que você clone o projeto para sua máquina. <br/>
 
